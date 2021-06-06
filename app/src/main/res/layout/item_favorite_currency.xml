@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currency"
+            type="com.example.mywallet.model.Currency" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_8dp"
+        android:paddingVertical="@dimen/_12dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIcon"
+            avatar="@{currency.icon}"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_currency_placeholder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBaseCounter"
+            style="@style/AppTheme.Text"
+            android:layout_marginStart="@dimen/_16dp"
+            android:textSize="@dimen/text_size_12"
+            android:textColor="@color/secondaryText"
+            app:layout_constraintBottom_toTopOf="@id/tvName"
+            app:layout_constraintStart_toEndOf="@id/ivIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="CRV/USD" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/AppTheme.Text"
+            android:text="@{currency.name}"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivIcon"
+            app:layout_constraintStart_toStartOf="@id/tvBaseCounter"
+            app:layout_constraintTop_toBottomOf="@id/tvBaseCounter"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Binance" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBuyPrice"
+            style="@style/AppTheme.Text"
+            android:textSize="@dimen/text_size_16"
+            android:padding="2dp"
+            android:layout_marginEnd="@dimen/_4dp"
+            android:text="@{`$` + currency.buy_price}"
+            android:textColor="@color/buyPriceColor"
+            app:layout_constraintBottom_toTopOf="@id/tvSellPrice"
+            app:layout_constraintEnd_toStartOf="@id/ivIsFavorite"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="$3.2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSellPrice"
+            style="@style/AppTheme.Text"
+            android:text="@{`$` + currency.sell_price}"
+            android:textColor="@color/sellPriceColor"
+            android:textSize="@dimen/text_size_16"
+            android:padding="2dp"
+            android:layout_marginEnd="@dimen/_4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivIsFavorite"
+            app:layout_constraintTop_toBottomOf="@id/tvBuyPrice"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="$2.14" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIsFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@{currency._favorite ? @drawable/ic_star_filled : @drawable/ic_star_outline}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

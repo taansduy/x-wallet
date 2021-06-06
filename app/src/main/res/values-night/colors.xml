@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryText">#FFFFFF</color>
+    <color name="secondaryText">#858F9B</color>
+    <color name="buyPriceColor">#02C076</color>
+    <color name="sellPriceColor">#CF304A</color>
+    <color name="backgroundColor">#171E26</color>
+    <color name="foregroundColor">#1F2630</color>
+    <color name="buttonColor">#1F2630</color>
+</resources>

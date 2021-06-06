@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Theme Style-->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:configChanges">keyboardHidden|orientation|screenSize</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/backgroundColor</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="android:textColorTertiary">@color/primaryText</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="AppTheme.SplashScreen" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <!--End Theme Style-->
+    <!--Text Style-->
+    <style name="AppTheme.Text" parrent="@android:style/TextAppearance">
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="SearchViewStyle" parent="AppTheme">
+        <item name="android:editTextColor">@color/primaryText</item>
+        <item name="android:textColorHint">@color/secondaryText</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+    <!--End Text Style-->
+</resources>
