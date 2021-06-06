@@ -39,7 +39,8 @@ class RemoteWalletRepository(
             }
             return response
         } catch (e: Exception) {
-            throw e
+            if(!cachedData.isNullOrEmpty()) return cachedData
+            else throw e
         }
     }
 

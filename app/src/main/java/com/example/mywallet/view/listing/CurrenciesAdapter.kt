@@ -119,7 +119,7 @@ class CurrenciesAdapter(
             binding.ivIsFavorite.setOnClickListener {
                 currency.is_favorite = !currency.is_favorite
                 changeFavoriteStatusCallback.invoke(currency)
-                notifyItemChanged(position)
+                notifyDataSetChanged()
             }
             val source = "${currency.base} /${currency.counter}"
             val res = SpannableString(source)
